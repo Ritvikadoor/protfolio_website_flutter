@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:ritvik_p_pramod/constants.dart';
 import 'package:ritvik_p_pramod/modules/widgets/area_info.dart';
+import 'package:ritvik_p_pramod/modules/widgets/coding.dart';
+import 'package:ritvik_p_pramod/modules/widgets/knowledge.dart';
+import 'package:ritvik_p_pramod/modules/widgets/linear_animated.dart';
 import 'package:ritvik_p_pramod/modules/widgets/my_info.dart';
+import 'package:ritvik_p_pramod/modules/widgets/skills.dart';
 
 class SideMenu extends StatelessWidget {
   const SideMenu({
@@ -31,6 +35,13 @@ class SideMenu extends StatelessWidget {
                   title: "Age",
                   text: "22",
                 ),
+                Skills(),
+                SizedBox(
+                  height: 10,
+                ),
+                Coding(),
+                Knowledges(),
+                Divider(),
               ],
             ),
           ))

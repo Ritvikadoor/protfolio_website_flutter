@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ritvik_p_pramod/modules/widgets/circular_indicator.dart';
 
 import '../../../constants.dart';
 
@@ -20,26 +21,33 @@ class Skills extends StatelessWidget {
             style: Theme.of(context).textTheme.subtitle2,
           ),
         ),
-        AspectRatio(
-          aspectRatio: 1,
-          child: TweenAnimationBuilder(
-            tween: Tween<double>(begin: 0, end: 1),
-            duration: defaultDuration,
-            builder: (context, double value, child) => Stack(
-              fit: StackFit.expand,
-              children: [
-                CircularProgressIndicator(
-                  value: value,
-                  color: primaryColor,
-                  backgroundColor: darkColor,
-                ),
-                Text(
-                  value.toString(),
-                  style: Theme.of(context).textTheme.subtitle1,
-                ),
-              ],
+        Row(
+          children: const [
+            Expanded(
+              child: AnimatedCircularIndicator(
+                percentage: 0.85,
+                label: "Flutter",
+              ),
             ),
-          ),
+            SizedBox(
+              width: defaultPadding,
+            ),
+            Expanded(
+              child: AnimatedCircularIndicator(
+                percentage: 0.70,
+                label: "Dart",
+              ),
+            ),
+            SizedBox(
+              width: defaultPadding,
+            ),
+            Expanded(
+              child: AnimatedCircularIndicator(
+                percentage: 0.65,
+                label: "Firebase",
+              ),
+            ),
+          ],
         )
       ],
     );
