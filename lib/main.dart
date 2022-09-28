@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ritvik_p_pramod/constants.dart';
-import 'package:ritvik_p_pramod/view/main_screen.dart';
+import 'package:ritvik_p_pramod/modules/view/main_screen.dart';
 
 void main() {
   runApp(const MyApp());
