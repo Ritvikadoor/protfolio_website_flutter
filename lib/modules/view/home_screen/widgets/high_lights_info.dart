@@ -12,6 +12,9 @@ class HighLightsInfo extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: const [
+        SizedBox(
+          height: 20,
+        ),
         HighLight(
           counter: AnimatedCounter(
             value: 1254,

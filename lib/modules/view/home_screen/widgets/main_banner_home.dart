@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ritvik_p_pramod/modules/constants/constants.dart';
 import 'package:ritvik_p_pramod/modules/view/home_screen/widgets/homebanner_widgets.dart';
+import 'package:ritvik_p_pramod/responsive/responsive.dart';
 
 class HomeScreenBanner extends StatelessWidget {
   const HomeScreenBanner({
@@ -25,31 +26,32 @@ class HomeScreenBanner extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                "Discovering my Amazing \nArt Space!",
-                style: Theme.of(context)
-                    .textTheme
-                    .headline3!
-                    .copyWith(fontWeight: FontWeight.bold, color: Colors.white),
-              ),
+              Text("Discovering my Amazing \nArt Space!",
+                  style: Responsive.isDesktop(context)
+                      ? Theme.of(context).textTheme.headline3!.copyWith(
+                          fontWeight: FontWeight.bold, color: Colors.white)
+                      : Theme.of(context).textTheme.headline6!.copyWith(
+                          fontWeight: FontWeight.bold, color: Colors.white)),
               DefaultTextStyle(
                 style: Theme.of(context).textTheme.subtitle1!,
                 child: Row(
-                  children: const [
-                    FlutterCodedText(),
-                    SizedBox(
-                      width: defaultPadding / 2,
-                    ),
+                  children: [
+                    if (!Responsive.isMobileLarge(context)) FlutterCodedText(),
+                    if (!Responsive.isMobileLarge(context))
+                      SizedBox(
+                        width: defaultPadding / 2,
+                      ),
                     Text("I build  "),
                     AnimatedTexting(),
-                    SizedBox(
-                      width: defaultPadding / 2,
-                    ),
-                    FlutterCodedText(),
+                    if (!Responsive.isMobileLarge(context))
+                      SizedBox(
+                        width: defaultPadding / 2,
+                      ),
+                    if (!Responsive.isMobileLarge(context)) FlutterCodedText(),
                   ],
                 ),
               ),
-              ExploreNowButton(),
+              if (!Responsive.isMobileLarge(context)) ExploreNowButton(),
             ],
           )
         ],

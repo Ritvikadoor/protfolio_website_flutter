@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:ritvik_p_pramod/modules/constants/constants.dart';
+import 'package:ritvik_p_pramod/responsive/responsive.dart';
 
 class ExploreNowButton extends StatelessWidget {
   const ExploreNowButton({
@@ -31,7 +32,7 @@ class FlutterCodedText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text.rich(TextSpan(text: "<", children: [
+    return const Text.rich(TextSpan(text: "<", children: [
       TextSpan(text: "Flutter", style: TextStyle(color: primaryColor)),
       TextSpan(text: ">"),
     ]));
@@ -48,7 +49,7 @@ class AnimatedTexting extends StatelessWidget {
     return AnimatedTextKit(animatedTexts: [
       TyperAnimatedText("Responsive Android Mobile Applications",
           speed: Duration(milliseconds: 60)),
-      TyperAnimatedText("Complete E-commerce app for Android & IOS",
+      TyperAnimatedText("Complete E-commerce app",
           speed: Duration(milliseconds: 60)),
       TyperAnimatedText("Personalized Mobile Applications",
           speed: Duration(milliseconds: 60)),
