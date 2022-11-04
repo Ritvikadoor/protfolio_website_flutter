@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ritvik_p_pramod/modules/constants/constants.dart';
+import 'package:ritvik_p_pramod/modules/view/home_screen/home_screen.dart';
 import 'package:ritvik_p_pramod/modules/view/main_screen.dart';
 
 void main() {
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
               bodyText2: TextStyle(color: bodyTextColor),
             ),
       ),
-      home: const MainScreen(),
+      home: const HomeScreen(),
     );
   }
 }
