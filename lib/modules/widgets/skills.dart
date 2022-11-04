@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ritvik_p_pramod/modules/widgets/circular_indicator.dart';
 
-import '../../../constants.dart';
+import '../constants/constants.dart';
 
 class Skills extends StatelessWidget {
   const Skills({

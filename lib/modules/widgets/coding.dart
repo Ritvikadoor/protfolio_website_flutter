@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ritvik_p_pramod/constants.dart';
+import 'package:ritvik_p_pramod/modules/constants/constants.dart';
 import 'package:ritvik_p_pramod/modules/widgets/linear_animated.dart';
 
 class Coding extends StatelessWidget {
