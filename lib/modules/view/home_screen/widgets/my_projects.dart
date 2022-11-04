@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ritvik_p_pramod/modules/constants/constants.dart';
 import 'package:ritvik_p_pramod/modules/view/home_screen/widgets/project_card.dart';
 import 'package:ritvik_p_pramod/modules/constants/projects.dart';
+import 'package:ritvik_p_pramod/responsive/responsive.dart';
 
 class MyProjects extends StatelessWidget {
   const MyProjects({
@@ -17,19 +18,46 @@ class MyProjects extends StatelessWidget {
           "My Projects",
           style: Theme.of(context).textTheme.headline6,
         ),
-        GridView.builder(
-          shrinkWrap: true,
-          itemCount: demo_projects.length,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3,
-              childAspectRatio: 1.3,
-              crossAxisSpacing: defaultPadding,
-              mainAxisSpacing: defaultPadding),
-          itemBuilder: (context, index) => ProjectCard(
-            project: demo_projects[index],
+        const Responsive(
+          mobile: ProjectGridView(
+            crossAxisCount: 1,
+            childAspectRatio: 2,
+          ),
+          desktop: ProjectGridView(),
+          tablet: ProjectGridView(
+            childAspectRatio: 1.1,
+          ),
+          mobileLarge: ProjectGridView(
+            crossAxisCount: 2,
           ),
         )
       ],
+    );
+  }
+}
+
+class ProjectGridView extends StatelessWidget {
+  const ProjectGridView({
+    Key? key,
+    this.crossAxisCount = 3,
+    this.childAspectRatio = 1,
+  }) : super(key: key);
+  final int crossAxisCount;
+  final double childAspectRatio;
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+      shrinkWrap: true,
+      itemCount: demo_projects.length,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: crossAxisCount,
+          childAspectRatio: childAspectRatio,
+          crossAxisSpacing: defaultPadding,
+          mainAxisSpacing: defaultPadding),
+      itemBuilder: (context, index) => ProjectCard(
+        project: demo_projects[index],
+      ),
     );
   }
 }

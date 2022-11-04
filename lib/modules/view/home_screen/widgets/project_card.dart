@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ritvik_p_pramod/modules/constants/constants.dart';
 import 'package:ritvik_p_pramod/modules/constants/projects.dart';
+import 'package:ritvik_p_pramod/responsive/responsive.dart';
 
 class ProjectCard extends StatelessWidget {
   const ProjectCard({Key? key, required this.project}) : super(key: key);
@@ -26,19 +27,18 @@ class ProjectCard extends StatelessWidget {
             ),
             Text(
               project.description!,
-              maxLines: 5,
+              maxLines: Responsive.isMobileLarge(context) ? 2 : 3,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(height: 1.5),
             ),
-            SizedBox(
-              height: 30,
+            Expanded(
+              child: TextButton(
+                  onPressed: () {},
+                  child: const Text(
+                    "Read More>>",
+                    style: TextStyle(color: primaryColor),
+                  )),
             ),
-            TextButton(
-                onPressed: () {},
-                child: const Text(
-                  "Read More>>",
-                  style: TextStyle(color: primaryColor),
-                ))
           ]),
     );
   }

@@ -11,7 +11,7 @@ class HomeScreenBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 3,
+      aspectRatio: Responsive.isMobile(context) ? 2.5 : 3,
       child: Stack(
         fit: StackFit.expand,
         children: [
@@ -42,7 +42,9 @@ class HomeScreenBanner extends StatelessWidget {
                         width: defaultPadding / 2,
                       ),
                     Text("I build  "),
-                    AnimatedTexting(),
+                    Responsive.isMobile(context)
+                        ? Expanded(child: AnimatedTexting())
+                        : AnimatedTexting(),
                     if (!Responsive.isMobileLarge(context))
                       SizedBox(
                         width: defaultPadding / 2,
@@ -51,7 +53,7 @@ class HomeScreenBanner extends StatelessWidget {
                   ],
                 ),
               ),
-              if (!Responsive.isMobileLarge(context)) ExploreNowButton(),
+              if (!Responsive.isMobileLarge(context)) const ExploreNowButton(),
             ],
           )
         ],
