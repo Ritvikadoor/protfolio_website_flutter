@@ -20,7 +20,10 @@ class HighLight extends StatelessWidget {
         ),
         Text(
           label!,
-          style: Theme.of(context).textTheme.subtitle2,
+          style: TextStyle(
+            color: primaryColor,
+            fontWeight: FontWeight.bold,
+          ),
         )
       ],
     );

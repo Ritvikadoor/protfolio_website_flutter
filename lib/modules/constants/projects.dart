@@ -6,9 +6,9 @@ class Project {
 
 List<Project> demo_projects = [
   Project(
-    title: "Responsive Admin Panel or Dashboard - Flutter UI",
+    title: "Fundr- Money Management App",
     description:
-        "On Flutter V2.* web officially supported on a stable branch. Today I share an Admin panel or you can call it dashboard UI build with flutter. Now you can build your app dashboard using flutter. This dashboard contains almost everything that you need like a chart, table, nice small card for showing info.",
+        "Fundr is a comprehensive money management application designed to empower individuals to take control of their finances with ease and confidence. With intuitive features and robust functionality, Fundr offers users a seamless experience in tracking expenses, setting budgets, and planning for financial goals.",
   ),
   Project(
     title: "E-Commerce Complate App - Flutter UI",

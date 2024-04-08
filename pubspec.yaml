@@ -29,7 +29,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  google_fonts: ^3.0.1
+  # google_fonts: ^3.0.1
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   awesome_icons: ^1.1.0
   animated_text_kit: ^4.2.2
+  url_launcher: ^6.1.11
 
 dev_dependencies:
   flutter_test:
@@ -47,7 +48,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+  # flutter_lints: ^2.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -64,6 +65,10 @@ flutter:
 assets:
   - images/img_my_pic.jpg
   - lake-mountains-landscape-5k-4480x2520-62.jpg
+  - me.jpg
+  - text_ritvik.jpg
+  - 20240325003852_IMG_7358-Photoroom-removebg-preview.png
+  - about_me.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

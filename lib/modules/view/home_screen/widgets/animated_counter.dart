@@ -13,13 +13,11 @@ class AnimatedCounter extends StatelessWidget {
     return TweenAnimationBuilder(
       tween: IntTween(begin: 0, end: value),
       duration: Duration(seconds: 3),
-      builder: (context, value, child) => Text(
-        "$value$text",
-        style: Theme.of(context)
-            .textTheme
-            .headline6!
-            .copyWith(color: primaryColor),
-      ),
+      builder: (context, value, child) => Text("$value$text",
+          style: Theme.of(context)
+              .textTheme
+              .headlineMedium!
+              .copyWith(color: contrastColor)),
     );
   }
 }

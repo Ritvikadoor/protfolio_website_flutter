@@ -71,7 +71,8 @@ class SideMenu extends StatelessWidget {
                     IconButton(
                         onPressed: () {}, icon: Icon(FontAwesomeIcons.twitter)),
                     IconButton(
-                        onPressed: () {}, icon: Icon(FontAwesomeIcons.github)),
+                        onPressed: () async {},
+                        icon: Icon(FontAwesomeIcons.github)),
                   ]),
                 )
               ],

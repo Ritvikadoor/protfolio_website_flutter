@@ -13,32 +13,46 @@ class ProjectCard extends StatelessWidget {
       padding: const EdgeInsets.all(defaultPadding),
       color: secondaryColor,
       child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               project.title!,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
             const SizedBox(
               height: defaultPadding,
             ),
             Text(
               project.description!,
-              maxLines: Responsive.isMobileLarge(context) ? 2 : 3,
+              maxLines: Responsive.isDesktop(context) ? 3 : 1,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(height: 1.5),
             ),
-            Expanded(
-              child: TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    "Read More>>",
-                    style: TextStyle(color: primaryColor),
-                  )),
+            const SizedBox(
+              height: defaultPadding,
             ),
+            Responsive.isDesktop(context)
+                ? Container(
+                    decoration: BoxDecoration(
+                        color: bgColor,
+                        borderRadius: BorderRadius.circular(30)),
+                    height: 40,
+                    child: TextButton(
+                        onPressed: () {},
+                        child: const Text(
+                          "Read More>>",
+                          style: TextStyle(
+                              color: primaryColor, fontWeight: FontWeight.bold),
+                        )))
+                : IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.navigate_next,
+                      color: Colors.white,
+                    )),
           ]),
     );
   }

@@ -11,27 +11,32 @@ class MyProjects extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          "My Projects",
-          style: Theme.of(context).textTheme.headline6,
-        ),
-        const Responsive(
-          mobile: ProjectGridView(
-            crossAxisCount: 1,
-            childAspectRatio: 2,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "My Projects",
+            style: TextStyle(
+                color: primaryColor, fontWeight: FontWeight.bold, fontSize: 20),
           ),
-          desktop: ProjectGridView(),
-          tablet: ProjectGridView(
-            childAspectRatio: 1.1,
-          ),
-          mobileLarge: ProjectGridView(
-            crossAxisCount: 2,
-          ),
-        )
-      ],
+          const Responsive(
+            mobile: ProjectGridView(
+              crossAxisCount: 1,
+              childAspectRatio: 1.5,
+            ),
+            desktop: ProjectGridView(),
+            tablet: ProjectGridView(
+              crossAxisCount: 2,
+              childAspectRatio: 2,
+            ),
+            mobileLarge: ProjectGridView(
+              crossAxisCount: 1,
+            ),
+          )
+        ],
+      ),
     );
   }
 }
@@ -40,7 +45,7 @@ class ProjectGridView extends StatelessWidget {
   const ProjectGridView({
     Key? key,
     this.crossAxisCount = 3,
-    this.childAspectRatio = 1,
+    this.childAspectRatio = 2,
   }) : super(key: key);
   final int crossAxisCount;
   final double childAspectRatio;

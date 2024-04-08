@@ -22,8 +22,8 @@ class MyInfo extends StatelessWidget {
                 backgroundImage: AssetImage('images/img_my_pic.jpg')),
             Spacer(),
             Text(
-              'RItvik Adoor',
-              style: Theme.of(context).textTheme.subtitle2,
+              'Ritvik Adoor',
+              style: Theme.of(context).textTheme.titleLarge,
             ),
           ],
         ),

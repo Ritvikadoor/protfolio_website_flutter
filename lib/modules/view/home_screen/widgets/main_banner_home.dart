@@ -16,45 +16,51 @@ class HomeScreenBanner extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           Image.asset(
-            "lake-mountains-landscape-5k-4480x2520-62.jpg",
-            fit: BoxFit.cover,
+            "about_me.jpg",
+            fit: BoxFit.fitWidth,
           ),
           Container(
-            color: darkColor.withOpacity(0.5),
+            color: darkColor.withOpacity(0.2),
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("Discovering my Amazing \nArt Space!",
-                  style: Responsive.isDesktop(context)
-                      ? Theme.of(context).textTheme.headline3!.copyWith(
-                          fontWeight: FontWeight.bold, color: Colors.white)
-                      : Theme.of(context).textTheme.headline6!.copyWith(
-                          fontWeight: FontWeight.bold, color: Colors.white)),
-              DefaultTextStyle(
-                style: Theme.of(context).textTheme.subtitle1!,
-                child: Row(
-                  children: [
-                    if (!Responsive.isMobileLarge(context)) FlutterCodedText(),
-                    if (!Responsive.isMobileLarge(context))
-                      SizedBox(
-                        width: defaultPadding / 2,
-                      ),
-                    Text("I build  "),
-                    Responsive.isMobile(context)
-                        ? Expanded(child: AnimatedTexting())
-                        : AnimatedTexting(),
-                    if (!Responsive.isMobileLarge(context))
-                      SizedBox(
-                        width: defaultPadding / 2,
-                      ),
-                    if (!Responsive.isMobileLarge(context)) FlutterCodedText(),
-                  ],
+          Padding(
+            padding: const EdgeInsets.only(left: 10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Discovering my Amazing \nArt Space!",
+                    style: Responsive.isDesktop(context)
+                        ? Theme.of(context).textTheme.headline3!.copyWith(
+                            fontWeight: FontWeight.bold, color: Colors.white)
+                        : Theme.of(context).textTheme.headline6!.copyWith(
+                            fontWeight: FontWeight.bold, color: Colors.white)),
+                DefaultTextStyle(
+                  style: Theme.of(context).textTheme.subtitle1!,
+                  child: Row(
+                    children: [
+                      if (!Responsive.isMobileLarge(context))
+                        FlutterCodedText(),
+                      if (!Responsive.isMobileLarge(context))
+                        SizedBox(
+                          width: defaultPadding / 2,
+                        ),
+                      Text("I build  "),
+                      Responsive.isMobile(context)
+                          ? Expanded(child: AnimatedTexting())
+                          : AnimatedTexting(),
+                      if (!Responsive.isMobileLarge(context))
+                        SizedBox(
+                          width: defaultPadding / 2,
+                        ),
+                      if (!Responsive.isMobileLarge(context))
+                        FlutterCodedText(),
+                    ],
+                  ),
                 ),
-              ),
-              if (!Responsive.isMobileLarge(context)) const ExploreNowButton(),
-            ],
+                if (!Responsive.isMobileLarge(context))
+                  const ExploreNowButton(),
+              ],
+            ),
           )
         ],
       ),
